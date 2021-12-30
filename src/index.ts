@@ -1,8 +1,8 @@
 import { config } from 'dotenv';
+config(); // Load Environment Variables
 import {app} from "./instances/server";
 
-// Load Environment Variables
-config();
+
 
 const PORT = process.env.PORT || 8080;
 
