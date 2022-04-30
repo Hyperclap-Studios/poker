@@ -3,3 +3,8 @@ interface Player {
     money: number;
     color: Color;
 }
+
+interface CardProps {
+    rank: Rank;
+    suit: Suit;
+}
