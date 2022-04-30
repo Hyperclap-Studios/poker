@@ -48,6 +48,7 @@ code {
   padding: 2rem;
   text-decoration: none;
   text-align: center;
+  margin-bottom: 2rem;
 
   &:hover, &:active {
     background: #2ac7b4;
@@ -57,8 +58,55 @@ code {
   &.noMargin {
     margin-bottom: 0;
   }
+
+  &.medium {
+    font-size: 1rem;
+    height: 5rem;
+    width: 5rem;
+  }
+}
+
+h1 {
+  margin-bottom: 2rem;
+}
+
+input {
+  border: none;
+  outline: none;
+  background: none;
+  color: inherit;
+  font-family: inherit;
+  border-bottom: 1px solid #aaa;
+  padding: .25rem 0;
+
+  margin-bottom: 2rem;
 }
 
 button {
+  background: #1e8e81;
+  border: 1px solid #1e8e81;
+  color: #fff;
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+  padding: .25rem .5rem;
+  border-radius: 9999px;
+
+  &:hover, &:active {
+    background: #2ac7b4;
+    border-color: #2ac7b4;
+  }
+
   margin-bottom: 2rem;
+}
+
+a {
+  color: #1e8e81;
+  text-decoration: none;
+  font-weight: 600;
+
+  &:hover, &:active {
+    color: #2ac7b4;
+    cursor: pointer;
+  }
 }

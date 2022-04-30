@@ -38,7 +38,6 @@ io.on('connection', (socket: Socket) => {
         lobbies.addLobby(lobby);
 
         io.emit('refresh_lobbies', lobbies.getCodes());
-        //console.log(lobby);
 
         socket.emit('lobby_created', lobby.code);
         socket.emit('refresh_player', host);
@@ -47,11 +46,33 @@ io.on('connection', (socket: Socket) => {
     });
 
     socket.on('refresh_player', (code: string) => {
-        console.log(socket.data.user.uuid);
-        const player = lobbies.getLobby(code)?.getPlayer(socket.data.user.uuid);
-        console.log(lobbies.lobbies[0]?.players);
-        console.log(player);
+        const lobby = lobbies.getLobby(code);
+        const player = lobby?.getPlayer(socket.data.user.uuid);
+        const players = lobby?.getPlayerNames();
         if (player) socket.emit('refresh_player', player);
+        if (players) socket.emit('get_players', players);
+    });
+
+    socket.on('join_lobby', (code: string) => {
+        console.log(`JOINING ${code}`);
+        const lobby = lobbies.getLobby(code);
+        if (!lobby) return;
+
+        let player = lobby.getPlayer(socket.data.user.uuid);
+
+        console.log(lobby);
+
+        if (!player) {
+            player = new Player(socket.id, socket.data.user.uuid, 'Player');
+
+            lobby.join(code, player);
+        }
+
+        socket.join(code);
+        io.emit('refresh_lobbies', lobbies.getCodes());
+        socket.emit('refresh_player', player);
+        socket.emit('lobby_joined', lobby.code);
+        io.in(code).emit('get_players', lobby.getPlayerNames());
     });
 });
 

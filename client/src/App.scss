@@ -1,3 +1,30 @@
 .App {
   min-height: 100vH;
+  width: 100%;
+}
+
+.controls, .adminControls {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.lobby {
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vH;
+}
+
+.code {
+  margin-bottom: 2rem;
+}
+
+.money {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 600;
 }

@@ -19,6 +19,10 @@ class Lobby {
         return true;
     }
 
+    public getPlayerNames(): string[] {
+        return this.players.map(player => player.name);
+    }
+
     // get player by uuid
     public getPlayer(uuid: string): Player | null {
         return this.players.find(player => player.uuid === uuid) ?? null;

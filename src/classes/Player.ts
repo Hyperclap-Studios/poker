@@ -10,8 +10,14 @@ class Player {
     public lastActivity: number;
     public socketId: string;
     public isHost: boolean;
+    public hasTurn: boolean;
 
-    constructor(socketId: string, uuid: string, name: string, isHost: boolean = false, money: number = 100, role: Role = 'Player') {
+    constructor(socketId: string,
+                uuid: string,
+                name: string,
+                isHost: boolean = false,
+                money: number = 100,
+                role: Role = 'Player') {
         this.uuid = uuid;
         this.socketId = socketId;
         this.lastActivity = Date.now();
@@ -19,6 +25,7 @@ class Player {
         this.money = money;
         this.role = role;
         this.isHost = isHost;
+        this.hasTurn = false;
     }
 
 }
