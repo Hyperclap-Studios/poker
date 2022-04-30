@@ -1,9 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -11,46 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #000;
-  color: #fafafa;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-
-input {
-  background: none;
-  border: none;
-  outline: none;
-  font-size: inherit;
-  font-family: inherit;
-  border-bottom: 1px solid #aaa;
-  color: inherit;
-}
-
-input, h1, .players {
-  margin-bottom: 2rem;
-}
-
-.roundButton {
-  background: #123131;
-  border: 1px solid #aaa;
-  outline: none;
-  width: 8rem;
-  height: 8rem;
-  border-radius: 50%;
-  color: #aaa;
-
-  &:hover, &:active {
-    color: #fff;
-    border-color: #fff;
-    background: #2e8282;
-  }
 }
